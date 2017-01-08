@@ -1650,7 +1650,7 @@ namespace LLVMSharp
         public static extern LLVMBool IsConstantString(LLVMValueRef @c);
 
         [DllImport(libraryPath, EntryPoint = "LLVMGetAsString", CallingConvention = CallingConvention.Cdecl)]
-        public static extern string GetAsString(LLVMValueRef @c, out size_t @Length);
+        public static extern IntPtr GetAsString(LLVMValueRef @c, out size_t @Length);
 
         [DllImport(libraryPath, EntryPoint = "LLVMConstStructInContext", CallingConvention = CallingConvention.Cdecl)]
         public static extern LLVMValueRef ConstStructInContext(LLVMContextRef @C, out LLVMValueRef @ConstantVals, uint @Count, LLVMBool @Packed);
@@ -2661,7 +2661,7 @@ namespace LLVMSharp
         public static extern LLVMMemoryBufferRef CreateMemoryBufferWithMemoryRangeCopy([MarshalAs(UnmanagedType.LPStr)] string @InputData, size_t @InputDataLength, [MarshalAs(UnmanagedType.LPStr)] string @BufferName);
 
         [DllImport(libraryPath, EntryPoint = "LLVMGetBufferStart", CallingConvention = CallingConvention.Cdecl)]
-        public static extern string GetBufferStart(LLVMMemoryBufferRef @MemBuf);
+        public static extern IntPtr GetBufferStart(LLVMMemoryBufferRef @MemBuf);
 
         [DllImport(libraryPath, EntryPoint = "LLVMGetBufferSize", CallingConvention = CallingConvention.Cdecl)]
         public static extern size_t GetBufferSize(LLVMMemoryBufferRef @MemBuf);
